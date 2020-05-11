@@ -6,7 +6,7 @@
 /*   By: plam <plam@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:38:02 by plam              #+#    #+#             */
-/*   Updated: 2019/10/24 11:47:51 by plam             ###   ########.fr       */
+/*   Updated: 2020/04/07 19:56:17 by plam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 static void	free_list(t_list *n_stock, void (*del)(void *))
 {
-	t_list	*stk;
 	t_list	*tmp;
 
-	stk = n_stock;
 	if (n_stock != NULL && del)
 	{
 		tmp = n_stock;
@@ -28,7 +26,6 @@ static void	free_list(t_list *n_stock, void (*del)(void *))
 			free(n_stock);
 			n_stock = tmp;
 		}
-		stk = NULL;
 	}
 }
 

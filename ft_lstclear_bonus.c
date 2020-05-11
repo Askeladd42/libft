@@ -6,7 +6,7 @@
 /*   By: plam <plam@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:25:02 by plam              #+#    #+#             */
-/*   Updated: 2019/10/24 11:40:08 by plam             ###   ########.fr       */
+/*   Updated: 2020/04/07 19:54:33 by plam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list	*stk;
 	t_list	*tmp;
 
-	stk = *lst;
 	if (lst != NULL && *lst != NULL && del != NULL)
 	{
 		tmp = *lst;
@@ -28,6 +26,5 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 			free(*lst);
 			*lst = tmp;
 		}
-		stk = NULL;
 	}
 }

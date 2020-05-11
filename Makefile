@@ -6,7 +6,7 @@
 #    By: plam <plam@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/08 18:12:57 by plam              #+#    #+#              #
-#    Updated: 2019/10/25 15:19:30 by plam             ###   ########.fr        #
+#    Updated: 2020/04/06 18:37:35 by plam             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ CC			= gcc
 
 RM			= rm -f
 
-CFLAGS		+=	-Wall -Wextra -Werror -I libft.h
+CFLAGS		+=	-Wall -Wextra -Werror --include libft.h
 
 .PHONY: bonus fclean clean re
 
