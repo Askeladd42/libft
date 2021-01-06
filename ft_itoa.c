@@ -6,7 +6,7 @@
 /*   By: plam <plam@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 14:20:43 by plam              #+#    #+#             */
-/*   Updated: 2019/10/23 19:27:35 by plam             ###   ########.fr       */
+/*   Updated: 2021/01/06 15:47:56 by plam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,26 @@ static int	nb_len(unsigned int n)
 	return (i);
 }
 
-char		*ft_itoa(int n)
+int	ft_ispos(int n)
+{
+	if (n < 0)
+		return (-n);
+	return (n);
+}
+
+char	*ft_itoa(int n)
 {
 	int					len;
 	unsigned int		nbr;
 	char				*dest;
 
-	nbr = (n < 0) ? -n : n;
-	len = (n < 0) ? nb_len(nbr) + 1 : nb_len(nbr);
-	if (!(dest = (char *)malloc(sizeof(char) * (len + 1))))
+	nbr = ft_ispos(n);
+	if (n < 0)
+		len = nb_len(nbr) + 1;
+	else
+		len = nb_len(nbr);
+	dest = (char *)malloc(sizeof(char) * (len + 1));
+	if (dest == NULL)
 		return (NULL);
 	dest[len] = '\0';
 	while (len-- > 0)
