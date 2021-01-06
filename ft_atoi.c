@@ -6,7 +6,7 @@
 /*   By: plam <plam@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 14:49:07 by plam              #+#    #+#             */
-/*   Updated: 2019/10/24 11:31:38 by plam             ###   ########.fr       */
+/*   Updated: 2021/01/06 14:23:24 by plam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	is_white(char c)
 	return ((c == ' ' || (c >= '\t' && c <= '\r')));
 }
 
-int			ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	int			i;
 	long long	t;

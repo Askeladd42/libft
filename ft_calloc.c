@@ -6,7 +6,7 @@
 /*   By: plam <plam@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 15:29:37 by plam              #+#    #+#             */
-/*   Updated: 2019/10/22 14:08:47 by plam             ###   ########.fr       */
+/*   Updated: 2021/01/06 15:11:27 by plam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	*ft_calloc(size_t count, size_t size)
 	size_t			bytes;
 
 	bytes = size * count;
-	if (!(dest = (unsigned char *)malloc(bytes)))
+	dest = (unsigned char *)malloc(bytes);
+	if (dest == NULL)
 		return (NULL);
 	i = 0;
 	while (i < bytes)
