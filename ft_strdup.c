@@ -6,7 +6,7 @@
 /*   By: plam <plam@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 15:29:49 by plam              #+#    #+#             */
-/*   Updated: 2019/10/24 12:52:18 by plam             ###   ########.fr       */
+/*   Updated: 2021/01/07 08:45:23 by plam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ char	*ft_strdup(const char *s)
 
 	i = 0;
 	len = ft_strlen(s);
-	if (!(dest = (char *)malloc(sizeof(char) * (len + 1))))
+	dest = (char *)malloc(sizeof(char) * (len + 1));
+	if (dest == NULL)
 		return (NULL);
 	while (i < len)
 	{

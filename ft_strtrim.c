@@ -6,7 +6,7 @@
 /*   By: plam <plam@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 10:42:13 by plam              #+#    #+#             */
-/*   Updated: 2019/10/24 13:06:09 by plam             ###   ########.fr       */
+/*   Updated: 2021/01/07 08:52:40 by plam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	j = ft_strlen(&s1[i]);
 	while (j > 0 && ft_strchr(set, s1[i + j - 1]) != 0)
 		j--;
-	if (!(dest = (char *)malloc(sizeof(char) * (j + 1))))
+	dest = (char *)malloc(sizeof(char) * (j + 1));
+	if (dest == NULL)
 		return (NULL);
 	k = 0;
 	while (k < j)

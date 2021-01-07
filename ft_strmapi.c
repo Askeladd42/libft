@@ -6,7 +6,7 @@
 /*   By: plam <plam@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 13:35:21 by plam              #+#    #+#             */
-/*   Updated: 2019/10/24 13:09:53 by plam             ###   ########.fr       */
+/*   Updated: 2021/01/07 08:48:44 by plam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*dest;
 	unsigned int	i;
 
-	if (!(dest = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))))
+	dest = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (dest == NULL)
 		return (0);
 	i = 0;
 	if (f && s)
