@@ -6,7 +6,7 @@
 #    By: plam <plam@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/08 18:12:57 by plam              #+#    #+#              #
-#    Updated: 2020/04/06 18:37:35 by plam             ###   ########.fr        #
+#    Updated: 2021/01/07 09:16:19 by plam             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,9 +37,9 @@ OBJS_BONUS	= ${SRCS2:.c=.o}
 
 NAME		= libft.a
 
-CC			= gcc
+CC			= /usr/bin/clang
 
-RM			= rm -f
+RM			= /bin/rm -f
 
 CFLAGS		+=	-Wall -Wextra -Werror --include libft.h
 
@@ -48,10 +48,10 @@ CFLAGS		+=	-Wall -Wextra -Werror --include libft.h
 all:		$(NAME)
 
 $(NAME):	${OBJS} ${OBJS_BONUS}
-			ar rcs $(NAME) ${OBJS} ${OBJS_BONUS}
+			/usr/bin/ar rcs $(NAME) ${OBJS} ${OBJS_BONUS}
 
 bonus:		${OBJS_BONUS}
-			ar rcs $(NAME) ${OBJS_BONUS}
+			/usr/bin/ar rcs $(NAME) ${OBJS_BONUS}
 
 clean :
 			${RM} ${OBJS} ${OBJS_BONUS}
