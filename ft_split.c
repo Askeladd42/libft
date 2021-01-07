@@ -6,7 +6,7 @@
 /*   By: plam <plam@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 11:38:00 by plam              #+#    #+#             */
-/*   Updated: 2019/10/23 13:34:40 by plam             ###   ########.fr       */
+/*   Updated: 2021/01/07 08:41:51 by plam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,22 +49,20 @@ static int	print_len(char const *s, char c)
 	return (i);
 }
 
-char		**ft_split(char const *s, char c)
+void	splitter(char const *s, char c, char **tab)
 {
 	size_t	i;
 	size_t	j;
 	size_t	k;
-	char	**tab;
 
-	if (!(tab = malloc(sizeof(*tab) * (count_prints(s, c) + 1))))
-		return (NULL);
 	i = 0;
 	k = 0;
 	while (s && s[k])
 	{
 		while (s[k] == c)
 			k++;
-		if (!(tab[i] = malloc(sizeof(char) * (print_len(&s[k], c) + 1))))
+		tab[i] = malloc(sizeof(char) * (print_len(&s[k], c) + 1));
+		if (tab[i] == NULL)
 			free_tab(tab);
 		if (s[k])
 		{
@@ -75,5 +73,15 @@ char		**ft_split(char const *s, char c)
 		}
 	}
 	tab[i] = NULL;
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**tab;
+
+	tab = malloc(sizeof(*tab) * (count_prints(s, c) + 1));
+	if (tab == NULL)
+		return (NULL);
+	splitter(s, c, tab);
 	return (tab);
 }
