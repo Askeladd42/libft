@@ -6,7 +6,7 @@
 /*   By: plam <plam@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:38:02 by plam              #+#    #+#             */
-/*   Updated: 2020/04/07 19:56:17 by plam             ###   ########.fr       */
+/*   Updated: 2021/01/07 10:31:10 by plam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void	free_list(t_list *n_stock, void (*del)(void *))
 	}
 }
 
-t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*n_lst;
 	t_list	*n_stock;

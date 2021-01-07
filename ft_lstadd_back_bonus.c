@@ -6,7 +6,7 @@
 /*   By: plam <plam@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:07:30 by plam              #+#    #+#             */
-/*   Updated: 2019/10/25 12:05:19 by plam             ###   ########.fr       */
+/*   Updated: 2021/01/07 10:25:11 by plam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	t_list *current;
+	t_list	*current;
 
 	if (!alst)
 		return ;
